@@ -25,7 +25,12 @@ Username: `johndoe` | Password: `s3cret`
 
 ### Unit Testing
 
-Please check the following files for unit testing examples:
+Please check the following component for unit testing examples:
 
 https://github.com/buikhacnam/react-testing/blob/main/src/components/TransactionCreateStepTwo.test.js
 
+### Integration Testing
+
+Please check the following component for integration testing examples:
+
+https://github.com/buikhacnam/react-testing/blob/main/src/components/TransactionCreateStepTwo.test.js

@@ -58,3 +58,37 @@ test('if the amount and note is entered, the pay button should be enabled', asyn
 	const payButton = await screen.findByRole('button', { name: /pay/i })
 	expect(payButton).toBeEnabled()
 })
+
+
+//Integration Test
+// describe how a user whould use the app 
+test ('if the amount and note is entered, the pay button should be changed from disabled to enabled', async () => {
+	render(
+		<TransactionCreateStepTwo
+			sender={{
+				id: '1',
+			}}
+			receiver={{
+				id: '2',
+			}}
+		/>
+	)
+
+	let payButton = await screen.findByRole('button', { name: /pay/i })
+
+	// check if the pay button is disabled in initial state
+	expect(payButton).toBeDisabled()
+
+	// get element by placeholder
+	const amountInput = screen.getByPlaceholderText(/amount/i)
+	const noteInput = screen.getByPlaceholderText(/add a note/i)
+
+	// enter amount and note
+	userEvent.type(amountInput, '100')
+	userEvent.type(noteInput, 'lunch')
+
+	payButton = await screen.findByRole('button', { name: /pay/i })
+
+	// check if the pay button is enabled
+	expect(payButton).toBeEnabled()
+})
