@@ -1,8 +1,12 @@
 ## Get started
 
+Run the following commands to install the dependencies and start the project:
+
 ```bash
+yarn
 yarn dev
 ```
+
 Username: `johndoe` | Password: `s3cret`
 
 
@@ -23,19 +27,25 @@ Username: `johndoe` | Password: `s3cret`
 
 
 
-## Unit Testing
+## Unit Testing and Integration Testing
+-	Unit testing: test a single function, component, or class in isolation
+-	Integration testing: test multiple units together
 
-Please check the following component for unit testing examples:
-
-https://github.com/buikhacnam/react-testing/blob/main/src/components/TransactionCreateStepTwo.test.js
-
-## Integration Testing
+We use `jest` and `react-testing-library` for unit testing and integration testing to test:
+	- Edge cases in high value features
+	- Things that are easy to break
+	- Basic React component testing
+		- User interaction
+		- Conditional Rendering
+		- Utility functions / hooks
 
 Please check the following component for integration testing examples:
 
 https://github.com/buikhacnam/react-testing/blob/main/src/components/TransactionCreateStepTwo.test.js
 
 ## End-to-end Testing
+
+We use `cypress` for end-to-end testing to test high value features
 
 Install `cypress`
 
@@ -68,3 +78,8 @@ describe('Login', () => {
 And run the test on the cypress window
 
 * use `Testing Playground` Chrome extension can help to find the element
+
+## References
+https://github.com/cypress-io/cypress-realworld-app
+
+https://github.com/MitchelSt/react-testing-starter
